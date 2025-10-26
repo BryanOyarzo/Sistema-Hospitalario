@@ -7,6 +7,12 @@ class Doctor:
         self.age = age
         self.rut = rut
 
+    def __str__(self):
+        return f"Nombre: {self.name}, Apellido: {self.lastname}, Edad: {self.age}, RUT: {self.rut}"
+    
+    def __repr__(self):
+        pass
+
     # Getters --- Estos métodos son para que el cliente pueda consultar la información del doctor !
     #region ///// Métodos de obtención individuales de cada atributo /////
     def get_name(self):
@@ -45,5 +51,8 @@ class Doctor:
     def set_run(self, new_rut):
         self.rut = new_rut
         return f"Rut Actualizado: {self.rut}"
-
     #endregion
+
+# Doctores Creador como Ejemplo
+doctor_1 = Doctor("Arthur", "Canales", 24, "19274924-0")
+doctor_2 = Doctor("John", "Silva", 18, "22858423-2")
