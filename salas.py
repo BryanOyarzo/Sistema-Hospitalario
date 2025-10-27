@@ -33,7 +33,7 @@ class Sala:
 
 
 
-### Guarda una lista Sala en un archiv csv,
+### Guarda una lista Sala en un archivo csv,
 ##### Contiene el numero indentificado y la capacidad maxima de cada sala
     def guardar_las_salas(lista_salas, archivo="salas.csv"):
         data = [{"numero": s.get_numero(), "capacidad": s.get_capacidad()} for s in lista_salas]
@@ -69,4 +69,5 @@ if __name__ == "__main__":
 
     # cargar y imprimir
     for s in Sala.cargar_las_salas():
+
         print(s)
