@@ -1,2 +1,3 @@
-Nombre,Apellido,Edad,Sala
-Ernesto,Morado,56,12
+nombre,apellido,edad,rut,diagnostico,temperatura,estado
+Ernesto,Morado,56,12.345.678-9,Resfriado,37.2,Ingresado
+Camila,Hernandez,30,22.456.789-0,Gripe,38.1,Alta

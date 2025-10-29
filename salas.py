@@ -13,6 +13,8 @@ class Sala:
     def __repr__(self):
         return self.__str__()
 
+
+
    # # getters / devuelve el numero de la sala
     def get_numero(self):
         return self.numero
@@ -28,6 +30,8 @@ class Sala:
     def set_capacidad(self, nueva_capacidad):
         self.capacidad = nueva_capacidad
         return f"la capacidad de la sala fue cambiada a {self.capacidad}"
+
+
 
 ### Guarda una lista Sala en un archivo csv,
 ##### Contiene el numero indentificado y la capacidad maxima de cada sala
@@ -46,6 +50,8 @@ class Sala:
             return salas
         except FileNotFoundError:
             return []
+        
+
 
 #prueba de salas.py
 if __name__ == "__main__": # Esto es para que solamente se ejecute a través del main
