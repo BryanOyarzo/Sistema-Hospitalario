@@ -8,12 +8,10 @@ class Sala:
         self.capacidad = capacidad
 
     def __str__(self):
-        return f"sala {self.numero} | capacidad: {self.capacidad}"
+        return f"Sala: {self.numero} | En uso: {self.uso} | Capacidad: {self.capacidad}"
 
     def __repr__(self):
         return self.__str__()
-
-
 
    # # getters / devuelve el numero de la sala
     def get_numero(self):
@@ -31,12 +29,10 @@ class Sala:
         self.capacidad = nueva_capacidad
         return f"la capacidad de la sala fue cambiada a {self.capacidad}"
 
-
-
 ### Guarda una lista Sala en un archivo csv,
 ##### Contiene el numero indentificado y la capacidad maxima de cada sala
     def guardar_las_salas(lista_salas, archivo="salas.csv"):
-        data = [{"numero": s.get_numero(), "capacidad": s.get_capacidad()} for s in lista_salas]
+        data = [{"Sala": s.get_numero(), "Capacidad": s.get_capacidad()} for s in lista_salas]
         df = pd.DataFrame(data)
         df.to_csv(archivo, index=False, encoding="utf-8")
 
@@ -46,22 +42,29 @@ class Sala:
     def cargar_las_salas(archivo="salas.csv"):
         try:
             df = pd.read_csv(archivo, encoding="utf-8")
-            salas = [Sala(str(row["numero"]), str(row["capacidad"])) for _, row in df.iterrows()]
+            salas = [Sala(str(row["Sala"]), str(row["Capacidad"])) for _, row in df.iterrows()]
             return salas
         except FileNotFoundError:
             return []
-        
-
 
 #prueba de salas.py
-if __name__ == "__main__":
+if __name__ == "__main__": # Esto es para que solamente se ejecute a través del main
 
     # lista de las salas
     sala1 = Sala("101", 2)
     sala2 = Sala("102", 3)
     sala3 = Sala("103", 1)
     sala4 = Sala("104", 8)
-    lista_salas = [sala1, sala2, sala3 , sala4]
+    sala5 = Sala("105", 2)
+    sala6 = Sala("106", 3)
+    sala7 = Sala("107", 1)
+    sala8 = Sala("108", 8)
+    sala9 = Sala("109", 2)
+    sala10 = Sala("110", 3)
+    lista_salas = [
+        sala1, sala2, sala3, sala4, sala5,
+        sala6, sala7, sala8, sala9, sala10
+        ]
 
 
     # guardar en csv
