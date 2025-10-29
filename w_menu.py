@@ -3,11 +3,12 @@ import tkinter as tk
 from tkinter import messagebox
 # Librerías de Archivos
 import csv
+import os
 # Importación de módulos
 from doctores import doctor_1, doctor_2, Doctor
 from salas import Sala
 from pacientes import cargar_pacientes_csv
-import os
+
 
 class App:
     # Un init cualquiera...
@@ -184,7 +185,7 @@ class App:
 
         # Valores por defecto
         diagnostico = "Pendiente"
-        temperatura = 36.5
+        temperatura = "Pendiente"
         estado = "Ingresado"
 
         # Verificamos si el archivo existe para escribir el encabezado
